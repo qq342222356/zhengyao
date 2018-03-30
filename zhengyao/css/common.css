@@ -1,0 +1,333 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin-top:0;
+    padding: 0;
+    border: 0;
+    font-size: 14px;
+    font: inherit;
+    vertical-align: baseline;
+    font-family:"microsoft yahei";
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+.main{
+    margin-top: 30px;
+}
+body {line-height: 1;}
+ol, ul {list-style: none; }
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {border-collapse: collapse;border-spacing: 0;}
+body, button, input, keygen, legend, select, textarea {
+    font: 12px/1.14 "PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #333;
+    outline: 0;
+}
+del, ins, s, u {text-decoration: none;}
+img{border:0; vertical-align: middle;}
+/*以上cssreset部分*/
+.clear{clear: both;}
+
+
+/*头部*/
+html,body{width: 100%; height: 100%; padding: 0; margin: 0;}
+body{min-width: 1350px; position: relative;}
+header{position: fixed; z-index: 99999999999999999999; width: 100%; height: 50px; left: 0px; top:0px; background: rgba(0,0,0,0.5); font-size: 16px;}
+.hCont{width:1180px; margin: 6px auto; box-sizing: border-box;}
+.hCont>ul{float: left;}
+.hCont>ul>li{float: left; height: 39px; line-height: 39px; margin-right: 32px;}
+.hCont>ul>li>a{text-decoration: none; color: white;}
+.hCont>ul>li>a:hover,.hCont>.hUser>span>a:hover{color: rgb(229,83,85);}
+.hCont>.hUser{ float: right; height: 40px; overflow: hidden;}
+.hCont>.hUser>span{display: block; float: right; height: 39px; line-height: 39px;}
+.hCont>.hUser>span>a{text-decoration: none; color: white;}
+.hLogin{padding-left: 22px; background: url("../style/images/user.png") 0 12px no-repeat; margin-right: 20px;}
+.hRegist{padding-left: 22px; background: url("../style/images/idea.png") 0 12px no-repeat; margin-right: 20px;}
+.hLogined{text-align: center; background: none; }
+.hLogined>p{color: white; line-height: 39px; background: url("../style/images/user.png") 12px 11px no-repeat; padding: 0 36px;}
+.hLogined>a{color: white; display: block; text-decoration: none; line-height: 38px; padding: 0 36px;}
+
+/*底部*/
+footer{background:rgb(51,51,51); color: rgb(120,120,120); margin-top: 100px;}
+footer>p{height: 60px; line-height: 60px; text-align: center;border-top: 1px rgb(47,47,47) solid;}
+.fCont{width: 1180px; margin: 0 auto; padding: 50px 0px 36px 0px;}
+.fCont>li{float: left;}
+.fCont>li>span,.fCont>li>span>a{line-height: 24px; font-size: 14px; color: rgb(206,206,206);}
+.fCont>li a{color: rgb(165,165,165); line-height: 22px; font-size: 12px; text-decoration: none;}
+.fAbout a:hover,.fAnliku a:hover{text-decoration: none; color: #d72d2f;}
+.fConnect a{cursor: text;}
+.fAbout{width: 343px; padding-left: 170px; background:url("../style/images/footl.png") 0 0px no-repeat; box-sizing: border-box;}
+.fAnliku{width: 222px;}
+.fConnect{ width: 215px; margin-right: 105px;}
+.fMedia{ width: 295px;}
+.fMedia>span{padding-left: 10px;}
+.fMedia>div>div{float: left; padding-top: 15px;}
+.fMedia>div>div>a{display: block; width: 138px; height: 30px; border: 1px rgb(95,95,95) solid; text-align: center; line-height: 30px; margin-bottom: 16px; border-radius: 15px;position: relative;}
+.fMedia>div>div>a:hover {color: #d72d2f;}
+.fMedia>div>div>a>img{margin-right: 5px; margin-top: -4px;}
+.fMedia>div>div>a>div{position: absolute; z-index: 49; left: -1px; top:31px; width: 140px; height: 0px; background: rgb(42,42,42);border-radius: 15px; overflow: hidden;}
+.myimg>img{width: 108px; height: auto; margin: 16px;}
+.fMediaR{margin-left: 14px;}
+
+
+
+/*用户登录弹框*/
+.loginShadow{position: fixed; width: 100%; height: 100%; left: 0px; z-index: 99999; background: rgba(0,0,0,0.7); font-size: 14px; visibility: hidden;}
+.userLogin{width: 442px; margin: 0 auto; margin-top: 10%; background: white; border-radius: 10px; padding: 40px; box-sizing: border-box; transform:scale(0); opacity: 0;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+    -moz-transition: transform 0.3s linear, opacity 0.3s linear;
+    -ms-transition: transform 0.3s linear, opacity 0.3s linear;
+    -webkit-transition: transform 0.3s linear, opacity 0.3s linear;
+}
+.userLogin>h4{ float: left; font-size: 16px; color: black; font-weight: bold;}
+.userLogin>img{ float: right; display: block; width: 15px; height: auto; cursor: pointer;}
+.userLogin>img:hover{transform: scale(1.2);}
+.userLoginU{ margin-top: 50px;}
+.userLoginP{margin-top: 15px;}
+.userLoginU>input,.userLoginP>input{width: 100%; height: 42px; border: 1px rgb(238,238,238) solid; padding-left: 16px; box-sizing: border-box; font-size: 14px;}
+.userLogin>p{width: 100%; height: 0px; line-height: 18px; padding-left: 25px; margin: 12px 0; overflow: hidden; background: url("../style/images/cuowutishi.png") 0px 0px no-repeat;}
+.userLoginU>input:focus,.userLoginP>input:focus{box-shadow: 1px 0px 2px rgb(215,45,47) inset,-1px 0px 2px rgb(215,45,47) inset,0px 1px 2px rgb(215,45,47) inset,0px -1px 2px rgb(215,45,47) inset;}
+.userLogin button{display: block; width: 100%; height: 42px; color:white; background: rgb(215,45,47); border: none; border-radius: 3px; font-size: 16px;}
+.userLogin button:hover{background: rgb(200,40,42);}
+.userLoginbottom{margin-top: 30px;}
+.userLoginbottom p{float: right; color: rgb(30,30,30);}
+.userLoginbottom a{text-decoration: none; color:rgb(215,45,47);}
+
+/*用户注册弹框*/
+.registShadow{position: fixed; width: 100%; height: 100%; left: 0px; z-index: 99998; background: rgba(0,0,0,0.7); font-size: 14px; visibility: hidden;}
+.userRegist{width: 442px; margin: 0 auto; margin-top: 10%; background: white; border-radius: 10px; padding: 40px; box-sizing: border-box; transform:scale(0); opacity: 0;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+    -moz-transition: transform 0.3s linear, opacity 0.3s linear;
+    -ms-transition: transform 0.3s linear, opacity 0.3s linear;
+    -webkit-transition: transform 0.3s linear, opacity 0.3s linear;
+}
+.userRegist>h4{ float: left; font-size: 16px; color: black; font-weight: bold;}
+.userRegist>img{ float: right; display: block; width: 15px; height: auto; cursor: pointer;}
+.userRegist>img:hover{transform: scale(1.2);}
+.userRegistU{ margin-top: 50px;}
+.userRegistP,.userRegistPAgain{margin-top: 15px;}
+.userRegistU>input,.userRegistP>input,.userRegistPAgain>input{width: 100%; height: 42px; border: 1px rgb(238,238,238) solid; padding-left: 16px; box-sizing: border-box; font-size: 14px;}
+.userRegist>p{width: 100%; height: 0px; line-height: 18px; padding-left: 25px; margin: 12px 0; overflow: hidden; background: url("../style/images/cuowutishi.png") 0px 0px no-repeat;}
+.userRegistU>input:focus,.userRegistP>input:focus,.userRegistPAgain>input:focus{box-shadow: 1px 0px 2px rgb(215,45,47) inset,-1px 0px 2px rgb(215,45,47) inset,0px 1px 2px rgb(215,45,47) inset,0px -1px 2px rgb(215,45,47) inset;}
+.userRegist button{display: block; width: 100%; height: 42px; color:white; background: rgb(215,45,47); border: none; border-radius: 3px; font-size: 16px;}
+.userRegist button:hover{background: rgb(200,40,42);}
+.userRegistbottom{margin-top: 30px;}
+.userRegistbottom p{float: right; color: rgb(30,30,30);}
+.userRegistbottom a{text-decoration: none; color:rgb(215,45,47);}
+
+/*用户找回密码弹框*/
+.backShadow{position: fixed; width: 100%; height: 100%; left: 0px; z-index: 99997; background: rgba(0,0,0,0.7); font-size: 14px; visibility: hidden;}
+.userBack{width: 442px; margin: 0 auto; margin-top: 10%; background: white; border-radius: 10px; padding: 40px; box-sizing: border-box; transform:scale(0); opacity: 0;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+    -moz-transition: transform 0.3s linear, opacity 0.3s linear;
+    -ms-transition: transform 0.3s linear, opacity 0.3s linear;
+    -webkit-transition: transform 0.3s linear, opacity 0.3s linear;
+}
+.userBack>h4{ float: left; font-size: 16px; color: black; font-weight: bold;}
+.userBack>img{ float: right; display: block; width: 15px; height: auto; cursor: pointer;}
+.userBack>img:hover{transform: scale(1.2);}
+.userBackU{ margin-top: 50px;}
+.userBackC{margin-top: 15px;}
+.userBackU>input{width: 100%; height: 42px; border: 1px rgb(238,238,238) solid; padding-left: 16px; box-sizing: border-box; font-size: 14px;}
+.userBackC>input{display: inline-block; vertical-align: middle; width: 208px; height: 42px; border: 1px rgb(238,238,238) solid; padding-left: 16px; box-sizing: border-box; font-size: 14px;}
+.userBackC>span{display: inline-block; vertical-align: middle; margin-left: 10px; width: 120px; height: 42px; border: 1px rgb(238,238,238) solid; box-sizing: border-box; font-size: 14px;
+    color:rgb(90,90,90); line-height: 40px; text-align: center; cursor: pointer;
+}
+.userBack>p{width: 100%; height: 0px; line-height: 18px; padding-left: 25px; margin: 12px 0; overflow: hidden; background: url("../style/images/cuowutishi.png") 0px 0px no-repeat;}
+.userBackU>input:focus,.userBackC>input:focus{box-shadow: 1px 0px 2px rgb(215,45,47) inset,-1px 0px 2px rgb(215,45,47) inset,0px 1px 2px rgb(215,45,47) inset,0px -1px 2px rgb(215,45,47) inset;}
+.userBack button{display: block; width: 100%; height: 42px; color:white; background: rgb(215,45,47); border: none; border-radius: 3px; font-size: 16px;}
+.userBack button:hover{background: rgb(200,40,42);}
+.userBackbottom{margin-top: 30px;}
+.userBackbottom p{float: right; color: rgb(30,30,30);}
+.userBackbottom a{text-decoration: none; color:rgb(215,45,47);}
+
+/*注册验证码弹框*/
+.codeShadow{position: fixed; width: 100%; height: 100%; left: 0px; z-index: 99996; background: rgba(0,0,0,0.7); font-size: 14px; visibility: hidden;}
+.userCode{width: 442px; margin: 0 auto; margin-top: 10%; background: white; border-radius: 10px; padding: 40px; box-sizing: border-box; transform:scale(0); opacity: 0;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+    -moz-transition: transform 0.3s linear, opacity 0.3s linear;
+    -ms-transition: transform 0.3s linear, opacity 0.3s linear;
+    -webkit-transition: transform 0.3s linear, opacity 0.3s linear;
+}
+.userCode>h4{ float: left; font-size: 16px; color: black; font-weight: bold;}
+.userCode>img{ float: right; display: block; width: 15px; height: auto; cursor: pointer;}
+.userCode>img:hover{transform: scale(1.2);}
+.userCodeU{ margin: 47px 0 40px 0; color: rgb(30,30,30);}
+.userCodeU>a{text-decoration: none; color:rgb(215,45,47);}
+.userCodeC>input{display: inline-block; vertical-align: middle; width: 100%; height: 42px; border: 1px rgb(238,238,238) solid; padding-left: 16px; box-sizing: border-box; font-size: 14px; margin-bottom: 10px;}
+.userCode>p{width: 100%; height: 0px; line-height: 18px; padding-left: 25px; margin: 12px 0; overflow: hidden; background: url("../style/images/cuowutishi.png") 0px 0px no-repeat;}
+.userCodeC>input:focus{box-shadow: 1px 0px 2px rgb(215,45,47) inset,-1px 0px 2px rgb(215,45,47) inset,0px 1px 2px rgb(215,45,47) inset,0px -1px 2px rgb(215,45,47) inset;}
+.userCode button{display: block; width: 100%; height: 42px; color:white; background: rgb(215,45,47); border: none; border-radius: 3px; font-size: 16px; margin-top: 30px;}
+.userCode button:hover{background: rgb(200,40,42);}
+.userCodebottom{margin-top: 30px;}
+.userCodebottom p{float: right; color: rgb(30,30,30);}
+.userCodebottom a{text-decoration: none; color:rgb(215,45,47);}
+
+/*找回密码验证码弹框*/
+.codeShadow2{position: fixed; width: 100%; height: 100%; left: 0px; z-index: 99995; background: rgba(0,0,0,0.7); font-size: 14px; visibility: hidden;}
+.userCode2{width: 442px; margin: 0 auto; margin-top: 10%; background: white; border-radius: 10px; padding: 40px; box-sizing: border-box; transform:scale(0); opacity: 0;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+    -moz-transition: transform 0.3s linear, opacity 0.3s linear;
+    -ms-transition: transform 0.3s linear, opacity 0.3s linear;
+    -webkit-transition: transform 0.3s linear, opacity 0.3s linear;
+}
+.userCode2>h4{ float: left; font-size: 16px; color: black; font-weight: bold;}
+.userCode2>img{ float: right; display: block; width: 15px; height: auto; cursor: pointer;}
+.userCode2>img:hover{transform: scale(1.2);}
+.userCodeU2{ margin: 47px 0 40px 0; color: rgb(30,30,30);}
+.userCodeU2>a{text-decoration: none; color:rgb(215,45,47);}
+.userCodeC2>input{display: inline-block; vertical-align: middle; width: 100%; height: 42px; border: 1px rgb(238,238,238) solid; padding-left: 16px; box-sizing: border-box; font-size: 14px; margin-bottom: 10px;}
+.userCode2>p{width: 100%; height: 0px; line-height: 18px; padding-left: 25px; margin: 12px 0; overflow: hidden; background: url("../style/images/cuowutishi.png") 0px 0px no-repeat;}
+.userCodeC2>input:focus{box-shadow: 1px 0px 2px rgb(215,45,47) inset,-1px 0px 2px rgb(215,45,47) inset,0px 1px 2px rgb(215,45,47) inset,0px -1px 2px rgb(215,45,47) inset;}
+.userCode2 button{display: block; width: 100%; height: 42px; color:white; background: rgb(215,45,47); border: none; border-radius: 3px; font-size: 16px; margin-top: 30px;}
+.userCode2 button:hover{background: rgb(200,40,42);}
+.userCodebottom2{margin-top: 30px;}
+.userCodebottom2 p{float: right; color: rgb(30,30,30);}
+.userCodebottom2 a{text-decoration: none; color:rgb(215,45,47);}
+
+/*修改密码弹框*/
+.resetShadow{position: fixed; width: 100%; height: 100%; left: 0px; z-index: 99999; background: rgba(0,0,0,0.7); font-size: 14px; visibility: hidden;}
+.userReset{width: 442px; margin: 0 auto; margin-top: 10%; background: white; border-radius: 10px; padding: 40px; box-sizing: border-box; transform:scale(0); opacity: 0;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+    -moz-transition: transform 0.3s linear, opacity 0.3s linear;
+    -ms-transition: transform 0.3s linear, opacity 0.3s linear;
+    -webkit-transition: transform 0.3s linear, opacity 0.3s linear;
+}
+.userReset>h4{ float: left; font-size: 16px; color: black; font-weight: bold;}
+.userReset>img{ float: right; display: block; width: 15px; height: auto; cursor: pointer;}
+.userReset>img:hover{transform: scale(1.2);}
+.userResetU{ margin-top: 50px;}
+.userResetP{margin-top: 15px;}
+.userResetU>input,.userResetP>input{width: 100%; height: 42px; border: 1px rgb(238,238,238) solid; padding-left: 16px; box-sizing: border-box; font-size: 14px;}
+.userReset>p{width: 100%; height: 0px; line-height: 18px; padding-left: 25px; margin: 12px 0; overflow: hidden; background: url("../style/images/cuowutishi.png") 0px 0px no-repeat;}
+.userResetU>input:focus,.userResetP>input:focus{box-shadow: 1px 0px 2px rgb(215,45,47) inset,-1px 0px 2px rgb(215,45,47) inset,0px 1px 2px rgb(215,45,47) inset,0px -1px 2px rgb(215,45,47) inset;}
+.userReset button{display: block; width: 100%; height: 42px; color:white; background: rgb(215,45,47); border: none; border-radius: 3px; font-size: 16px;}
+.userReset button:hover{background: rgb(200,40,42);}
+
+/*返回顶部*/
+.backTopCont{position: relative; width: 1180px; height: 0px; margin: 0 auto; display: none;}
+.backTopCont>div{width: 50px; height: 209px; position: absolute; z-index: 999; right: -75px;}
+.backTopCont .GZH{display: block; position: relative; width: 50px; height: 50px; background-color:rgb(246,150,151); border-radius: 2px; cursor: pointer; background-image:url("../style/images/toperweima.png"); background-repeat: no-repeat; background-position: 14px 14px;}
+.backTopCont .GZH>.GZH-show{width: 0px; height: 0px; position: absolute; z-index: 999; right: 50px; top: 0; overflow: hidden; box-sizing: border-box; padding: 0px;}
+.GZH-show_inner{overflow: hidden; background: white; width: 300px; height: 164px; border-radius: 5px; box-shadow: 1px 0px 5px rgb(240,240,240),0px 1px 5px rgb(240,240,240),-1px 0px 5px rgb(240,240,240),0px -1px 5px rgb(240,240,240);}
+.GZH-show_inner>img{display: block; float: left; width: 152px; height: 152px; margin: 6px;}
+.GZH-show_inner>div{float: left; width: 115px; height: 152px; margin: 6px; padding-top: 10px;}
+.GZH-show_inner>div>h3{ font-size: 18px; color: black; line-height: 36px;}
+.GZH-show_inner>div>p{font-size: 14px; color: rgb(153,153,153); line-height: 24px;}
+.backTopCont .lQQ{display: block; width: 50px; height: 50px; background-color:rgb(246,150,151); border-radius: 2px; cursor: pointer; background-image:url("../style/images/topqq.png"); background-repeat: no-repeat; background-position: 14px 14px; margin-top: 3px;}
+.backTopCont .sugInfo{display: block; width: 50px; height: 50px; background-color:rgb(246,150,151); border-radius: 2px; cursor: pointer; background-image:url("../style/images/topsuggust.png"); background-repeat: no-repeat; background-position: 14px 14px; margin-top: 3px;}
+.backTopCont .backTop{display: block; width: 50px; height: 50px; background-color:rgb(246,150,151); border-radius: 2px; cursor: pointer; background-image:url("../style/images/result_backTop.png"); background-repeat: no-repeat; background-position: 14px 14px; margin-top: 3px;}
+.backTopCont .backTop:hover,.backTopCont .lQQ:hover,.backTopCont .GZH:hover,.backTopCont .sugInfo:hover{background-color: rgb(229,83,85);}
+
+.backTopCont .lQQ:hover, .backTopCont .sugInfo:hover {
+    background-image: none;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+}
+.backTopCont .lQQ:hover:after {
+    content: '客服';
+    display: block;
+    color: #fff;
+    font-size: 16px;
+}
+.backTopCont .sugInfo:hover:after {
+    content: '反馈';
+    display: block;
+    color: #fff;
+    font-size: 16px;
+}
+
+span.keyword{color: #D72D2F;}
+
+/*伪图片背景 */
+.center{min-width:1260px; height: 420px; position: relative; box-sizing: border-box;}
+.center>span{display: block; width: 100%; height: 100%; position: relative; overflow: hidden;}
+.center>span>img{position: absolute; z-index: 2; left: 0; top: 0; display: block; width:auto; height: 420px;}
+.center>.centerCont{position: absolute; z-index: 3; left: 0px; top: 0px; width: 100%; height: 100%; box-sizing: border-box; padding: 0 40px;}
+
+/* 反馈弹窗 */
+.feedbackShadow{position: fixed; width: 100%; height: 100%; left: 0px; z-index: 99999; background: rgba(0,0,0,0.7); font-size: 14px; visibility: hidden;}
+.feedback{width: 442px; margin: 0 auto; margin-top: 10%; background: white; border-radius: 10px; padding: 40px; box-sizing: border-box; transform:scale(0); opacity: 0;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+    -moz-transition: transform 0.3s linear, opacity 0.3s linear;
+    -ms-transition: transform 0.3s linear, opacity 0.3s linear;
+    -webkit-transition: transform 0.3s linear, opacity 0.3s linear;
+}
+.feedback>h4{ float: left; font-size: 16px; color: black; font-weight: bold;}
+.feedback>img{ float: right; display: block; width: 15px; height: auto; cursor: pointer;}
+.feedback>img:hover{transform: scale(1.2);}
+.fb_content {
+    padding: 66px 0;
+    margin: 0 auto;
+}
+.input_group {
+    margin-bottom: 26px;
+}
+.input_group label {
+    display: inline-block;
+    width: 50px;
+    line-height: 44px;
+    vertical-align: top;
+}
+.input_group input, .input_group textarea {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    padding: 5px 8px;
+    box-sizing: border-box;
+}
+.input_group input[type="text"] {
+    line-height: 44px;
+    height: 44px;
+}
+.input_group textarea {
+    height: 114px;
+    resize: none;
+}
+.btn_group {
+    /*padding-left: 50px;*/
+    float: right;
+}
+
+.btn_group a {
+    display: inline-block;
+    width: 90px;
+    line-height: 38px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+}
+.btn_group a.btn_ok {
+    background-color: #d33c3e;
+    color: #fff;
+}
+.btn_group a.btn_cancel {
+    background-color: #ececec;
+    margin-right: 11px;
+}
+
+.search button,.searchR button{cursor: pointer;}
+.search button:hover,.searchR button:hover{background: firebrick;}
+.suggest{box-sizing: border-box; border: 1px rgb(200,200,200) solid;}
